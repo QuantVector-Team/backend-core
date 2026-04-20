@@ -1,5 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/QuantVector.dir/link.d"
+  "CMakeFiles/QuantVector.dir/core/TradingEngine.cpp.o"
+  "CMakeFiles/QuantVector.dir/core/TradingEngine.cpp.o.d"
   "CMakeFiles/QuantVector.dir/include/Authenticator/AuthController.cpp.o"
   "CMakeFiles/QuantVector.dir/include/Authenticator/AuthController.cpp.o.d"
   "CMakeFiles/QuantVector.dir/include/Backtest/BacktestController.cpp.o"

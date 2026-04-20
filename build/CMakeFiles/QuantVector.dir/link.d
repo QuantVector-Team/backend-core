@@ -7,6 +7,7 @@ QuantVector: \
   CMakeFiles/QuantVector.dir/include/Authenticator/AuthController.cpp.o \
   CMakeFiles/QuantVector.dir/include/Backtest/BacktestController.cpp.o \
   CMakeFiles/QuantVector.dir/include/History/HistoryController.cpp.o \
+  CMakeFiles/QuantVector.dir/core/TradingEngine.cpp.o \
   /usr/lib/x86_64-linux-gnu/libboost_system.so.1.83.0 \
   /usr/lib/gcc/x86_64-linux-gnu/14/libstdc++.so \
   /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/libm.so \
@@ -34,7 +35,6 @@ QuantVector: \
   /usr/lib/gcc/x86_64-linux-gnu/14/libgcc.a \
   /usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o \
   /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o \
-  /lib/x86_64-linux-gnu/libm.so.6 \
   /lib64/ld-linux-x86-64.so.2
 
 /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o:
@@ -52,6 +52,8 @@ CMakeFiles/QuantVector.dir/include/Authenticator/AuthController.cpp.o:
 CMakeFiles/QuantVector.dir/include/Backtest/BacktestController.cpp.o:
 
 CMakeFiles/QuantVector.dir/include/History/HistoryController.cpp.o:
+
+CMakeFiles/QuantVector.dir/core/TradingEngine.cpp.o:
 
 /usr/lib/x86_64-linux-gnu/libboost_system.so.1.83.0:
 
@@ -106,7 +108,5 @@ CMakeFiles/QuantVector.dir/include/History/HistoryController.cpp.o:
 /usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o:
 
 /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o:
-
-/lib/x86_64-linux-gnu/libm.so.6:
 
 /lib64/ld-linux-x86-64.so.2:

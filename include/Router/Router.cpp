@@ -16,7 +16,7 @@ boost::beast::http::response<boost::beast::http::string_body> Router::routeReque
 	else if(target == "/api/backtest/run" && req.method() == boost::beast::http::verb::post) {
 		return BacktestController::runTest(req);
 	}
-	else if(target == "/api/history" && req.method() == boost::beast::http::verb::get) {
+	else if(target == "/api/history" && req.method() == boost::beast::http::verb::post) {
 		return HistoryController::getUserHistory(req);
 	}
 	else {

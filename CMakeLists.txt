@@ -12,6 +12,8 @@ add_executable(${PROJECT_NAME}
 	include/Authenticator/AuthController.cpp
 	include/Backtest/BacktestController.cpp
 	include/History/HistoryController.cpp
+
+	core/TradingEngine.cpp
 )
 
 target_include_directories(${PROJECT_NAME} PRIVATE ${Boost_INCLUDE_DIRS})

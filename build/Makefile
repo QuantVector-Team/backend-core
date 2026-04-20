@@ -129,6 +129,30 @@ QuantVector/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/QuantVector.dir/build.make CMakeFiles/QuantVector.dir/build
 .PHONY : QuantVector/fast
 
+core/TradingEngine.o: core/TradingEngine.cpp.o
+.PHONY : core/TradingEngine.o
+
+# target to build an object file
+core/TradingEngine.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QuantVector.dir/build.make CMakeFiles/QuantVector.dir/core/TradingEngine.cpp.o
+.PHONY : core/TradingEngine.cpp.o
+
+core/TradingEngine.i: core/TradingEngine.cpp.i
+.PHONY : core/TradingEngine.i
+
+# target to preprocess a source file
+core/TradingEngine.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QuantVector.dir/build.make CMakeFiles/QuantVector.dir/core/TradingEngine.cpp.i
+.PHONY : core/TradingEngine.cpp.i
+
+core/TradingEngine.s: core/TradingEngine.cpp.s
+.PHONY : core/TradingEngine.s
+
+# target to generate assembly for a file
+core/TradingEngine.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QuantVector.dir/build.make CMakeFiles/QuantVector.dir/core/TradingEngine.cpp.s
+.PHONY : core/TradingEngine.cpp.s
+
 include/Authenticator/AuthController.o: include/Authenticator/AuthController.cpp.o
 .PHONY : include/Authenticator/AuthController.o
 
@@ -258,6 +282,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... QuantVector"
+	@echo "... core/TradingEngine.o"
+	@echo "... core/TradingEngine.i"
+	@echo "... core/TradingEngine.s"
 	@echo "... include/Authenticator/AuthController.o"
 	@echo "... include/Authenticator/AuthController.i"
 	@echo "... include/Authenticator/AuthController.s"
