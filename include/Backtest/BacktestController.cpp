@@ -6,13 +6,15 @@
 
 boost::beast::http::response<boost::beast::http::string_body> BacktestController::runTest(const boost::beast::http::request<boost::beast::http::string_body> &req) {
 	boost::beast::http::response<boost::beast::http::string_body> res{boost::beast::http::status::ok, req.version()};
-	res.set(boost::beast::http::field::content_type, "application/json"); try {
+	res.set(boost::beast::http::field::content_type, "application/json"); 
+	
+	try {
 		boost::json::value parsed = boost::json::parse(req.body());
 		boost::json::object &body = parsed.as_object();
 		boost::json::object response_obj;
 
 		std::string platform = body.at("platform").as_string().c_str();
-		std::string vk_user_id = 0;
+		std::string vk_user_id = "";
 		std::string token = "";
 		bool need_chart = false;
 		if(platform == "vk") 
@@ -40,20 +42,27 @@ boost::beast::http::response<boost::beast::http::string_body> BacktestController
 			int slow_period = params_obj.contains("slow_period") ?  params_obj.at("slow_period").as_int64() : 50;
 			my_strategy = new SmaCrossStrategy(fast_period, slow_period);
 		}
-		else if(strat_name == "Bollinger") {
+		else if(strat_name == "Bollinger Bands") {
 			int window = params_obj.contains("window") ? params_obj.at("window").as_int64() : 20;
 			double dev = params_obj.contains("deviation") ? params_obj.at("deviation").as_int64() : 2.0;
 			my_strategy = new BollingerStrategy(window, dev);
+		}
+		else if(strat_name == "RSI_Oscillator") {
+			int period = params_obj.contains("period") ? params_obj.at("period").as_int64() : 14;
+			int buy = params_obj.contains("buy_level") ? params_obj.at("buy_level").as_int64() : 30;
+			int sell = params_obj.contains("sell_level") ? params_obj.at("sell_level").as_int64() : 70;
+			my_strategy = new RsiStrategy(period, buy, sell);
+		}
+		else if (strat_name == "MACD") {
+			int fast_period = params_obj.contains("fast_period") ? params_obj.at("fast_period").as_int64() : 12;
+			int slow_period = params_obj.contains("slow_period") ? params_obj.at("slow_period").as_int64() : 26;
+			int signal_period = params_obj.contains("signal_period") ? params_obj.at("signal_period").as_int64() : 9;
+			my_strategy = new MacdStrategy(fast_period, slow_period, signal_period);
 		}
 		else {
 			throw std::runtime_error("Invalid strategy: " + strat_name);
 		}
 		std::cout << "[BACKTEST] Coin: " << coin << "\nTimeframe: " << timeframe << "\nStrategy name: " << strat_name << std::endl;
-
-		int rsi_period = params_obj.at("rsi_period").as_int64();
-		int buy_level = params_obj.at("buy_level").as_int64();
-		int sell_level = params_obj.at("sell_level").as_int64();
-
 
 
 		// fake history..

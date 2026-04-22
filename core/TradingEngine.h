@@ -42,8 +42,35 @@ class BollingerStrategy : public IStrategy {
 		int getSignal(const std::vector<Candle> &history, int current_index) override;
 };
 
+
+class RsiStrategy : public IStrategy {
+	private:
+		int rsi_period_;
+		int buy_level_;
+		int sell_level_;
+		double calculateRsi(const std::vector<Candle> &data, int index);	
+	public:
+		RsiStrategy(int period, int buy, int sell);
+		int getSignal(const std::vector<Candle> &history, int current_index) override;
+};
+
+class MacdStrategy : public IStrategy {
+	private:
+		int fast_period_;
+		int slow_period_;
+		int signal_period_;
+		double calculateEMA(const std::vector<Candle> &data, int index, int period);
+	public:
+		MacdStrategy(int fast, int slow, int signal);
+		double getMacdLine(const std::vector<Candle> &data, int index);
+		int getSignal(const std::vector<Candle> &history, int current_index) override;
+};
+
+
+
 class BacktestEngine { 
 	public:
 		static BacktestResult run(const std::vector<Candle> &history, double start_balance, IStrategy *strategy);
 };
+
 #endif
