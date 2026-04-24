@@ -1,6 +1,7 @@
 #include "HistoryController.h"
 #include <boost/beast/version.hpp>
 #include <boost/json.hpp>
+#include <pqxx/pqxx>
 #include <iostream>
 
 boost::beast::http::response<boost::beast::http::string_body> HistoryController::getUserHistory(const boost::beast::http::request<boost::beast::http::string_body> &req) {
@@ -19,13 +20,19 @@ boost::beast::http::response<boost::beast::http::string_body> HistoryController:
 			token = parse_obj.at("token").as_string().c_str();
 		long long limit = parse_obj.at("limit").as_int64();
 
-		//TODO: request to base data
+		pqxx::connection db_conn("dbname=quant_db user=postgres password=12345 host=127.0.0.1 port=5432");
+		pqxx::work txn(db_conn);
+		std::string sql = "SELECT * FROM history WHERE owner_token = " + token + ";";
+		pqxx::result result = txn.exec(sql);
 
+		boost::json::array data;
+		while (!result.empty()) {
+			std::string raw_json = result[0][0].as<std::string>();
+			boost::json::value json_data = boost::json::parse(raw_json);
+			data = json_data.get_array();
+		}
 
 		res_obj["status"] = "success";
-		boost::json::array data;
-		data.push_back({{"date", "2026-05-20"}, {"symbol", "BTCUSDT"}, {"strategy_name", "RSI_Strategy"}, {"profit_percent", 15.4}});
-		data.push_back({{"date", "2026-05-19"}, {"symbol", "ETHUSDT"}, {"strategy_name", "SMA_Cross"}, {"profit_percent", -2.1}});
 		res_obj["data"] = data;
 		res.body() = boost::json::serialize(res_obj);
 	}

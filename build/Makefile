@@ -201,6 +201,30 @@ include/Backtest/BacktestController.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/QuantVector.dir/build.make CMakeFiles/QuantVector.dir/include/Backtest/BacktestController.cpp.s
 .PHONY : include/Backtest/BacktestController.cpp.s
 
+include/Binance/MarketFetcher.o: include/Binance/MarketFetcher.cpp.o
+.PHONY : include/Binance/MarketFetcher.o
+
+# target to build an object file
+include/Binance/MarketFetcher.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QuantVector.dir/build.make CMakeFiles/QuantVector.dir/include/Binance/MarketFetcher.cpp.o
+.PHONY : include/Binance/MarketFetcher.cpp.o
+
+include/Binance/MarketFetcher.i: include/Binance/MarketFetcher.cpp.i
+.PHONY : include/Binance/MarketFetcher.i
+
+# target to preprocess a source file
+include/Binance/MarketFetcher.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QuantVector.dir/build.make CMakeFiles/QuantVector.dir/include/Binance/MarketFetcher.cpp.i
+.PHONY : include/Binance/MarketFetcher.cpp.i
+
+include/Binance/MarketFetcher.s: include/Binance/MarketFetcher.cpp.s
+.PHONY : include/Binance/MarketFetcher.s
+
+# target to generate assembly for a file
+include/Binance/MarketFetcher.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QuantVector.dir/build.make CMakeFiles/QuantVector.dir/include/Binance/MarketFetcher.cpp.s
+.PHONY : include/Binance/MarketFetcher.cpp.s
+
 include/History/HistoryController.o: include/History/HistoryController.cpp.o
 .PHONY : include/History/HistoryController.o
 
@@ -291,6 +315,9 @@ help:
 	@echo "... include/Backtest/BacktestController.o"
 	@echo "... include/Backtest/BacktestController.i"
 	@echo "... include/Backtest/BacktestController.s"
+	@echo "... include/Binance/MarketFetcher.o"
+	@echo "... include/Binance/MarketFetcher.i"
+	@echo "... include/Binance/MarketFetcher.s"
 	@echo "... include/History/HistoryController.o"
 	@echo "... include/History/HistoryController.i"
 	@echo "... include/History/HistoryController.s"

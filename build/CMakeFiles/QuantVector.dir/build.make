@@ -142,10 +142,24 @@ CMakeFiles/QuantVector.dir/include/History/HistoryController.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/QuantVector.dir/include/History/HistoryController.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yrm/QuantVector/include/History/HistoryController.cpp -o CMakeFiles/QuantVector.dir/include/History/HistoryController.cpp.s
 
+CMakeFiles/QuantVector.dir/include/Binance/MarketFetcher.cpp.o: CMakeFiles/QuantVector.dir/flags.make
+CMakeFiles/QuantVector.dir/include/Binance/MarketFetcher.cpp.o: /home/yrm/QuantVector/include/Binance/MarketFetcher.cpp
+CMakeFiles/QuantVector.dir/include/Binance/MarketFetcher.cpp.o: CMakeFiles/QuantVector.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yrm/QuantVector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/QuantVector.dir/include/Binance/MarketFetcher.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/QuantVector.dir/include/Binance/MarketFetcher.cpp.o -MF CMakeFiles/QuantVector.dir/include/Binance/MarketFetcher.cpp.o.d -o CMakeFiles/QuantVector.dir/include/Binance/MarketFetcher.cpp.o -c /home/yrm/QuantVector/include/Binance/MarketFetcher.cpp
+
+CMakeFiles/QuantVector.dir/include/Binance/MarketFetcher.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/QuantVector.dir/include/Binance/MarketFetcher.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yrm/QuantVector/include/Binance/MarketFetcher.cpp > CMakeFiles/QuantVector.dir/include/Binance/MarketFetcher.cpp.i
+
+CMakeFiles/QuantVector.dir/include/Binance/MarketFetcher.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/QuantVector.dir/include/Binance/MarketFetcher.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yrm/QuantVector/include/Binance/MarketFetcher.cpp -o CMakeFiles/QuantVector.dir/include/Binance/MarketFetcher.cpp.s
+
 CMakeFiles/QuantVector.dir/core/TradingEngine.cpp.o: CMakeFiles/QuantVector.dir/flags.make
 CMakeFiles/QuantVector.dir/core/TradingEngine.cpp.o: /home/yrm/QuantVector/core/TradingEngine.cpp
 CMakeFiles/QuantVector.dir/core/TradingEngine.cpp.o: CMakeFiles/QuantVector.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yrm/QuantVector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/QuantVector.dir/core/TradingEngine.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yrm/QuantVector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/QuantVector.dir/core/TradingEngine.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/QuantVector.dir/core/TradingEngine.cpp.o -MF CMakeFiles/QuantVector.dir/core/TradingEngine.cpp.o.d -o CMakeFiles/QuantVector.dir/core/TradingEngine.cpp.o -c /home/yrm/QuantVector/core/TradingEngine.cpp
 
 CMakeFiles/QuantVector.dir/core/TradingEngine.cpp.i: cmake_force
@@ -163,6 +177,7 @@ QuantVector_OBJECTS = \
 "CMakeFiles/QuantVector.dir/include/Authenticator/AuthController.cpp.o" \
 "CMakeFiles/QuantVector.dir/include/Backtest/BacktestController.cpp.o" \
 "CMakeFiles/QuantVector.dir/include/History/HistoryController.cpp.o" \
+"CMakeFiles/QuantVector.dir/include/Binance/MarketFetcher.cpp.o" \
 "CMakeFiles/QuantVector.dir/core/TradingEngine.cpp.o"
 
 # External object files for target QuantVector
@@ -173,12 +188,15 @@ QuantVector: CMakeFiles/QuantVector.dir/include/Router/Router.cpp.o
 QuantVector: CMakeFiles/QuantVector.dir/include/Authenticator/AuthController.cpp.o
 QuantVector: CMakeFiles/QuantVector.dir/include/Backtest/BacktestController.cpp.o
 QuantVector: CMakeFiles/QuantVector.dir/include/History/HistoryController.cpp.o
+QuantVector: CMakeFiles/QuantVector.dir/include/Binance/MarketFetcher.cpp.o
 QuantVector: CMakeFiles/QuantVector.dir/core/TradingEngine.cpp.o
 QuantVector: CMakeFiles/QuantVector.dir/build.make
 QuantVector: CMakeFiles/QuantVector.dir/compiler_depend.ts
 QuantVector: /usr/lib/x86_64-linux-gnu/libboost_system.so.1.83.0
+QuantVector: /usr/lib/x86_64-linux-gnu/libssl.so
+QuantVector: /usr/lib/x86_64-linux-gnu/libcrypto.so
 QuantVector: CMakeFiles/QuantVector.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/yrm/QuantVector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable QuantVector"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/yrm/QuantVector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable QuantVector"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/QuantVector.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

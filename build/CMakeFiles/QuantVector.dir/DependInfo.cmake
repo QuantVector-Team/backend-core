@@ -11,6 +11,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/yrm/QuantVector/core/TradingEngine.cpp" "CMakeFiles/QuantVector.dir/core/TradingEngine.cpp.o" "gcc" "CMakeFiles/QuantVector.dir/core/TradingEngine.cpp.o.d"
   "/home/yrm/QuantVector/include/Authenticator/AuthController.cpp" "CMakeFiles/QuantVector.dir/include/Authenticator/AuthController.cpp.o" "gcc" "CMakeFiles/QuantVector.dir/include/Authenticator/AuthController.cpp.o.d"
   "/home/yrm/QuantVector/include/Backtest/BacktestController.cpp" "CMakeFiles/QuantVector.dir/include/Backtest/BacktestController.cpp.o" "gcc" "CMakeFiles/QuantVector.dir/include/Backtest/BacktestController.cpp.o.d"
+  "/home/yrm/QuantVector/include/Binance/MarketFetcher.cpp" "CMakeFiles/QuantVector.dir/include/Binance/MarketFetcher.cpp.o" "gcc" "CMakeFiles/QuantVector.dir/include/Binance/MarketFetcher.cpp.o.d"
   "/home/yrm/QuantVector/include/History/HistoryController.cpp" "CMakeFiles/QuantVector.dir/include/History/HistoryController.cpp.o" "gcc" "CMakeFiles/QuantVector.dir/include/History/HistoryController.cpp.o.d"
   "/home/yrm/QuantVector/include/Router/Router.cpp" "CMakeFiles/QuantVector.dir/include/Router/Router.cpp.o" "gcc" "CMakeFiles/QuantVector.dir/include/Router/Router.cpp.o.d"
   "/home/yrm/QuantVector/src/main.cpp" "CMakeFiles/QuantVector.dir/src/main.cpp.o" "gcc" "CMakeFiles/QuantVector.dir/src/main.cpp.o.d"
