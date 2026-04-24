@@ -16,6 +16,7 @@ int main() {
 		boost::asio::ip::tcp::acceptor acceptor(ioc, endpoint);
 		std::cout << "[SERVER] Start on the port 8080.  Waiting a requests..." << std::endl;
 
+
 		while(true) {
 			boost::asio::ip::tcp::socket socket(ioc);
 			acceptor.accept(socket);
