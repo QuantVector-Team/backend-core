@@ -3,8 +3,11 @@
 #include <boost/json.hpp>
 #include <pqxx/pqxx>
 #include <iostream>
+#include <thread>
+#include <chrono>
 
 boost::beast::http::response<boost::beast::http::string_body> HistoryController::getUserHistory(const boost::beast::http::request<boost::beast::http::string_body> &req) {
+
 	boost::beast::http::response<boost::beast::http::string_body> res{boost::beast::http::status::ok, req.version()};
 	res.set(boost::beast::http::field::content_type, "application/json");
 	boost::json::object res_obj;
@@ -22,14 +25,21 @@ boost::beast::http::response<boost::beast::http::string_body> HistoryController:
 
 		pqxx::connection db_conn("dbname=quant_db user=postgres password=12345 host=127.0.0.1 port=5432");
 		pqxx::work txn(db_conn);
-		std::string sql = "SELECT * FROM history WHERE owner_token = " + token + ";";
+		std::string sql;
+		if(platform == "vk")
+			sql = "SELECT * FROM history WHERE vk_user_id = '" + vk_user_id + "';";
+		else 
+			sql = "SELECT * FROM history WHERE owner_token = '" + token + "';";
 		pqxx::result result = txn.exec(sql);
 
 		boost::json::array data;
-		while (!result.empty()) {
-			std::string raw_json = result[0][0].as<std::string>();
-			boost::json::value json_data = boost::json::parse(raw_json);
-			data = json_data.get_array();
+		for(auto row : result) {
+			boost::json::object test_result;
+			test_result["date"] = row["created_at"].c_str();
+			test_result["symbol"] = row["symbol"].c_str();
+			test_result["strategy_name"] = row["strategy_name"].c_str();
+			test_result["profit_percent"] = row["profit_percent"].as<double>();
+			data.push_back(test_result);
 		}
 
 		res_obj["status"] = "success";

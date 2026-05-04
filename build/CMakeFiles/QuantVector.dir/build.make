@@ -86,10 +86,38 @@ CMakeFiles/QuantVector.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/QuantVector.dir/src/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yrm/QuantVector/src/main.cpp -o CMakeFiles/QuantVector.dir/src/main.cpp.s
 
+CMakeFiles/QuantVector.dir/src/Listener/Listener.cpp.o: CMakeFiles/QuantVector.dir/flags.make
+CMakeFiles/QuantVector.dir/src/Listener/Listener.cpp.o: /home/yrm/QuantVector/src/Listener/Listener.cpp
+CMakeFiles/QuantVector.dir/src/Listener/Listener.cpp.o: CMakeFiles/QuantVector.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yrm/QuantVector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/QuantVector.dir/src/Listener/Listener.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/QuantVector.dir/src/Listener/Listener.cpp.o -MF CMakeFiles/QuantVector.dir/src/Listener/Listener.cpp.o.d -o CMakeFiles/QuantVector.dir/src/Listener/Listener.cpp.o -c /home/yrm/QuantVector/src/Listener/Listener.cpp
+
+CMakeFiles/QuantVector.dir/src/Listener/Listener.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/QuantVector.dir/src/Listener/Listener.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yrm/QuantVector/src/Listener/Listener.cpp > CMakeFiles/QuantVector.dir/src/Listener/Listener.cpp.i
+
+CMakeFiles/QuantVector.dir/src/Listener/Listener.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/QuantVector.dir/src/Listener/Listener.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yrm/QuantVector/src/Listener/Listener.cpp -o CMakeFiles/QuantVector.dir/src/Listener/Listener.cpp.s
+
+CMakeFiles/QuantVector.dir/src/Session/Session.cpp.o: CMakeFiles/QuantVector.dir/flags.make
+CMakeFiles/QuantVector.dir/src/Session/Session.cpp.o: /home/yrm/QuantVector/src/Session/Session.cpp
+CMakeFiles/QuantVector.dir/src/Session/Session.cpp.o: CMakeFiles/QuantVector.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yrm/QuantVector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/QuantVector.dir/src/Session/Session.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/QuantVector.dir/src/Session/Session.cpp.o -MF CMakeFiles/QuantVector.dir/src/Session/Session.cpp.o.d -o CMakeFiles/QuantVector.dir/src/Session/Session.cpp.o -c /home/yrm/QuantVector/src/Session/Session.cpp
+
+CMakeFiles/QuantVector.dir/src/Session/Session.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/QuantVector.dir/src/Session/Session.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yrm/QuantVector/src/Session/Session.cpp > CMakeFiles/QuantVector.dir/src/Session/Session.cpp.i
+
+CMakeFiles/QuantVector.dir/src/Session/Session.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/QuantVector.dir/src/Session/Session.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yrm/QuantVector/src/Session/Session.cpp -o CMakeFiles/QuantVector.dir/src/Session/Session.cpp.s
+
 CMakeFiles/QuantVector.dir/include/Router/Router.cpp.o: CMakeFiles/QuantVector.dir/flags.make
 CMakeFiles/QuantVector.dir/include/Router/Router.cpp.o: /home/yrm/QuantVector/include/Router/Router.cpp
 CMakeFiles/QuantVector.dir/include/Router/Router.cpp.o: CMakeFiles/QuantVector.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yrm/QuantVector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/QuantVector.dir/include/Router/Router.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yrm/QuantVector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/QuantVector.dir/include/Router/Router.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/QuantVector.dir/include/Router/Router.cpp.o -MF CMakeFiles/QuantVector.dir/include/Router/Router.cpp.o.d -o CMakeFiles/QuantVector.dir/include/Router/Router.cpp.o -c /home/yrm/QuantVector/include/Router/Router.cpp
 
 CMakeFiles/QuantVector.dir/include/Router/Router.cpp.i: cmake_force
@@ -103,7 +131,7 @@ CMakeFiles/QuantVector.dir/include/Router/Router.cpp.s: cmake_force
 CMakeFiles/QuantVector.dir/include/Authenticator/AuthController.cpp.o: CMakeFiles/QuantVector.dir/flags.make
 CMakeFiles/QuantVector.dir/include/Authenticator/AuthController.cpp.o: /home/yrm/QuantVector/include/Authenticator/AuthController.cpp
 CMakeFiles/QuantVector.dir/include/Authenticator/AuthController.cpp.o: CMakeFiles/QuantVector.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yrm/QuantVector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/QuantVector.dir/include/Authenticator/AuthController.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yrm/QuantVector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/QuantVector.dir/include/Authenticator/AuthController.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/QuantVector.dir/include/Authenticator/AuthController.cpp.o -MF CMakeFiles/QuantVector.dir/include/Authenticator/AuthController.cpp.o.d -o CMakeFiles/QuantVector.dir/include/Authenticator/AuthController.cpp.o -c /home/yrm/QuantVector/include/Authenticator/AuthController.cpp
 
 CMakeFiles/QuantVector.dir/include/Authenticator/AuthController.cpp.i: cmake_force
@@ -117,7 +145,7 @@ CMakeFiles/QuantVector.dir/include/Authenticator/AuthController.cpp.s: cmake_for
 CMakeFiles/QuantVector.dir/include/Backtest/BacktestController.cpp.o: CMakeFiles/QuantVector.dir/flags.make
 CMakeFiles/QuantVector.dir/include/Backtest/BacktestController.cpp.o: /home/yrm/QuantVector/include/Backtest/BacktestController.cpp
 CMakeFiles/QuantVector.dir/include/Backtest/BacktestController.cpp.o: CMakeFiles/QuantVector.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yrm/QuantVector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/QuantVector.dir/include/Backtest/BacktestController.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yrm/QuantVector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/QuantVector.dir/include/Backtest/BacktestController.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/QuantVector.dir/include/Backtest/BacktestController.cpp.o -MF CMakeFiles/QuantVector.dir/include/Backtest/BacktestController.cpp.o.d -o CMakeFiles/QuantVector.dir/include/Backtest/BacktestController.cpp.o -c /home/yrm/QuantVector/include/Backtest/BacktestController.cpp
 
 CMakeFiles/QuantVector.dir/include/Backtest/BacktestController.cpp.i: cmake_force
@@ -131,7 +159,7 @@ CMakeFiles/QuantVector.dir/include/Backtest/BacktestController.cpp.s: cmake_forc
 CMakeFiles/QuantVector.dir/include/History/HistoryController.cpp.o: CMakeFiles/QuantVector.dir/flags.make
 CMakeFiles/QuantVector.dir/include/History/HistoryController.cpp.o: /home/yrm/QuantVector/include/History/HistoryController.cpp
 CMakeFiles/QuantVector.dir/include/History/HistoryController.cpp.o: CMakeFiles/QuantVector.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yrm/QuantVector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/QuantVector.dir/include/History/HistoryController.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yrm/QuantVector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/QuantVector.dir/include/History/HistoryController.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/QuantVector.dir/include/History/HistoryController.cpp.o -MF CMakeFiles/QuantVector.dir/include/History/HistoryController.cpp.o.d -o CMakeFiles/QuantVector.dir/include/History/HistoryController.cpp.o -c /home/yrm/QuantVector/include/History/HistoryController.cpp
 
 CMakeFiles/QuantVector.dir/include/History/HistoryController.cpp.i: cmake_force
@@ -145,7 +173,7 @@ CMakeFiles/QuantVector.dir/include/History/HistoryController.cpp.s: cmake_force
 CMakeFiles/QuantVector.dir/include/Binance/MarketFetcher.cpp.o: CMakeFiles/QuantVector.dir/flags.make
 CMakeFiles/QuantVector.dir/include/Binance/MarketFetcher.cpp.o: /home/yrm/QuantVector/include/Binance/MarketFetcher.cpp
 CMakeFiles/QuantVector.dir/include/Binance/MarketFetcher.cpp.o: CMakeFiles/QuantVector.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yrm/QuantVector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/QuantVector.dir/include/Binance/MarketFetcher.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yrm/QuantVector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/QuantVector.dir/include/Binance/MarketFetcher.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/QuantVector.dir/include/Binance/MarketFetcher.cpp.o -MF CMakeFiles/QuantVector.dir/include/Binance/MarketFetcher.cpp.o.d -o CMakeFiles/QuantVector.dir/include/Binance/MarketFetcher.cpp.o -c /home/yrm/QuantVector/include/Binance/MarketFetcher.cpp
 
 CMakeFiles/QuantVector.dir/include/Binance/MarketFetcher.cpp.i: cmake_force
@@ -159,7 +187,7 @@ CMakeFiles/QuantVector.dir/include/Binance/MarketFetcher.cpp.s: cmake_force
 CMakeFiles/QuantVector.dir/core/TradingEngine.cpp.o: CMakeFiles/QuantVector.dir/flags.make
 CMakeFiles/QuantVector.dir/core/TradingEngine.cpp.o: /home/yrm/QuantVector/core/TradingEngine.cpp
 CMakeFiles/QuantVector.dir/core/TradingEngine.cpp.o: CMakeFiles/QuantVector.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yrm/QuantVector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/QuantVector.dir/core/TradingEngine.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yrm/QuantVector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/QuantVector.dir/core/TradingEngine.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/QuantVector.dir/core/TradingEngine.cpp.o -MF CMakeFiles/QuantVector.dir/core/TradingEngine.cpp.o.d -o CMakeFiles/QuantVector.dir/core/TradingEngine.cpp.o -c /home/yrm/QuantVector/core/TradingEngine.cpp
 
 CMakeFiles/QuantVector.dir/core/TradingEngine.cpp.i: cmake_force
@@ -173,6 +201,8 @@ CMakeFiles/QuantVector.dir/core/TradingEngine.cpp.s: cmake_force
 # Object files for target QuantVector
 QuantVector_OBJECTS = \
 "CMakeFiles/QuantVector.dir/src/main.cpp.o" \
+"CMakeFiles/QuantVector.dir/src/Listener/Listener.cpp.o" \
+"CMakeFiles/QuantVector.dir/src/Session/Session.cpp.o" \
 "CMakeFiles/QuantVector.dir/include/Router/Router.cpp.o" \
 "CMakeFiles/QuantVector.dir/include/Authenticator/AuthController.cpp.o" \
 "CMakeFiles/QuantVector.dir/include/Backtest/BacktestController.cpp.o" \
@@ -184,6 +214,8 @@ QuantVector_OBJECTS = \
 QuantVector_EXTERNAL_OBJECTS =
 
 QuantVector: CMakeFiles/QuantVector.dir/src/main.cpp.o
+QuantVector: CMakeFiles/QuantVector.dir/src/Listener/Listener.cpp.o
+QuantVector: CMakeFiles/QuantVector.dir/src/Session/Session.cpp.o
 QuantVector: CMakeFiles/QuantVector.dir/include/Router/Router.cpp.o
 QuantVector: CMakeFiles/QuantVector.dir/include/Authenticator/AuthController.cpp.o
 QuantVector: CMakeFiles/QuantVector.dir/include/Backtest/BacktestController.cpp.o
@@ -196,7 +228,7 @@ QuantVector: /usr/lib/x86_64-linux-gnu/libboost_system.so.1.83.0
 QuantVector: /usr/lib/x86_64-linux-gnu/libssl.so
 QuantVector: /usr/lib/x86_64-linux-gnu/libcrypto.so
 QuantVector: CMakeFiles/QuantVector.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/yrm/QuantVector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable QuantVector"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/yrm/QuantVector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable QuantVector"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/QuantVector.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -3,6 +3,8 @@ QuantVector: \
   /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o \
   /usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o \
   CMakeFiles/QuantVector.dir/src/main.cpp.o \
+  CMakeFiles/QuantVector.dir/src/Listener/Listener.cpp.o \
+  CMakeFiles/QuantVector.dir/src/Session/Session.cpp.o \
   CMakeFiles/QuantVector.dir/include/Router/Router.cpp.o \
   CMakeFiles/QuantVector.dir/include/Authenticator/AuthController.cpp.o \
   CMakeFiles/QuantVector.dir/include/Backtest/BacktestController.cpp.o \
@@ -61,6 +63,10 @@ QuantVector: \
 /usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o:
 
 CMakeFiles/QuantVector.dir/src/main.cpp.o:
+
+CMakeFiles/QuantVector.dir/src/Listener/Listener.cpp.o:
+
+CMakeFiles/QuantVector.dir/src/Session/Session.cpp.o:
 
 CMakeFiles/QuantVector.dir/include/Router/Router.cpp.o:
 

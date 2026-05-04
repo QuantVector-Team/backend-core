@@ -29,12 +29,13 @@ boost::beast::http::response<boost::beast::http::string_body> AuthController::re
 
 		if(platform == "vk")  {
 			std::string vk_user_id  = auth_data_obj.at("vk_user_id").as_string().c_str();
-			std::string sql = "INSERT INTO users (platform, vk_user_id, ) VALUES (" + txn.quote(platform) + ", " + txn.quote(vk_user_id) + ", " + txn.quote(login) +
+			std::string sql = "INSERT INTO users (platform, vk_user_id, login) VALUES (" + txn.quote(platform) + ", " + txn.quote(vk_user_id) + ", " + txn.quote(login) +
 				") ON CONFLICT (vk_user_id) DO NOTHING;";
 			txn.exec(sql);
 		}
+		std::string email;
 		if(platform == "mobile" || platform == "web") {
-			std::string email = auth_data_obj.at("email").as_string().c_str();
+			email = auth_data_obj.at("email").as_string().c_str();
 			std::string password = auth_data_obj.at("password").as_string().c_str();
 			std::string token = generateFakeToken(email);
 		       	std::string sql =  "INSERT INTO users (platform, email, password_hash, token, login) VALUES (" + txn.quote(platform) + ", " + txn.quote(email) + ", " + txn.quote(password) +
@@ -47,7 +48,7 @@ boost::beast::http::response<boost::beast::http::string_body> AuthController::re
 		
 
 		response_obj["status"] = "success";
-		response_obj["token"] = "secret_token_123";
+		response_obj["token"] = generateFakeToken(email);
 
 	}
 	catch (const std::runtime_error &e) {
@@ -70,7 +71,6 @@ boost::beast::http::response<boost::beast::http::string_body> AuthController::re
 	return res;
 }
 
-//TODO: add the login user mechanic
 boost::beast::http::response<boost::beast::http::string_body> AuthController::loginUser(const boost::beast::http::request<boost::beast::http::string_body> &req) {
 	boost::beast::http::response<boost::beast::http::string_body> res{boost::beast::http::status::ok, req.version()};
 	res.set(boost::beast::http::field::content_type, "application/json");
@@ -84,29 +84,41 @@ boost::beast::http::response<boost::beast::http::string_body> AuthController::lo
 			throw std::runtime_error("Unknown platform");
 		if(platform == "vk")
 			throw std::runtime_error("VK bot does not need login endpoint");
-	
-		std::string email = body.at("email").as_string().c_str();
-		std::string password = body.at("password").as_string().c_str();
-		std::string login = body.at("login").as_string().c_str();
+		
+		boost::json::value auth_data = body.at("auth_data");
+		boost::json::object auth_obj = auth_data.as_object();	
+		std::string email = auth_obj.at("email").as_string().c_str();
+		std::string password = auth_obj.at("password").as_string().c_str();
 
-		std::cout << "[LOGIN] The login attempt: " << login << std::endl;
-		pqxx::connection db_conn("dbname=quant_db uesr=postgres password=12345 host=127.0.0.1 port=5432");
+		pqxx::connection db_conn("dbname=quant_db user=postgres password=12345 host=127.0.0.1 port=5432");
 		pqxx::work txn(db_conn);
 
 		std::string sql = "SELECT password_hash, login, token FROM users WHERE email = " + txn.quote(email) + ";";
-		pqxx::result result = txn.exec(sql);
-		if(result.empty())
-			throw std::runtime_error("User not found");
-		std::string db_password = result[0]["password_hash"].as<std::string>();
-		std::string db_login = result[1]["login"].as<std::string>();
-		std::string db_token = result[2]["token"].as<std::string>();
-		if(db_password != password)
-			throw std::runtime_error("Wrong password");
 		
-		std::cout << "[DB] Successful login!"<< std::endl;
-		response_obj["status"] = "success";
-		response_obj["token"] = db_token;
-		response_obj["login"] = db_login;
+		try{
+			pqxx::result result = txn.exec(sql);
+			if(result.empty())
+				throw std::runtime_error("User not found");
+
+			std::string db_password = result[0]["password_hash"].as<std::string>();
+			std::string db_login = result[0]["login"].as<std::string>();
+			std::string db_token = result[0]["token"].as<std::string>();
+			if(db_password != password)
+				throw std::runtime_error("Wrong password");
+
+
+			std::cout << "[DB] Successful login!"<< std::endl;
+			response_obj["status"] = "success";
+			response_obj["token"] = db_token;
+			response_obj["login"] = db_login;
+		}
+		catch(const pqxx::sql_error &e) {
+			std::cout << "error sql request: " << e.what() << std::endl;
+			std::cout << "Query was: " << e.query() << std::endl;
+		}
+		catch(const std::exception &e) {
+			std::cout << "error: " << e.what() << std::endl;
+		}
 
 	}
 	catch (const std::exception &e) {

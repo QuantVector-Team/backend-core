@@ -11,11 +11,14 @@ pkg_check_modules(PQXX REQUIRED libpqxx)
 add_executable(${PROJECT_NAME}
        
 	src/main.cpp
+	src/Listener/Listener.cpp
+	src/Session/Session.cpp
 	include/Router/Router.cpp
 	include/Authenticator/AuthController.cpp
 	include/Backtest/BacktestController.cpp
 	include/History/HistoryController.cpp
 	include/Binance/MarketFetcher.cpp
+
 
 	core/TradingEngine.cpp
 

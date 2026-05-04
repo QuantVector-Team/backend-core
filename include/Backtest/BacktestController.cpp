@@ -27,7 +27,6 @@ boost::beast::http::response<boost::beast::http::string_body> BacktestController
 			token = body.at("token").as_string().c_str();	
 			need_chart = true;
 		}
-
 		boost::json::value settings = body.at("settings");
 		boost::json::object &sett_obj = settings.as_object();
 		std::string symbol = sett_obj.at("symbol").as_string().c_str();
@@ -41,6 +40,8 @@ boost::beast::http::response<boost::beast::http::string_body> BacktestController
 		boost::json::value params = strat.at("params");
 		boost::json::object params_obj = params.as_object();
 
+		std::cout << "[BACKTEST] Coin: " << symbol  << "\nTimeframe: " << timeframe << "\nStrategy name: " << strat_name << std::endl;
+
 		// Strategy selection
 		IStrategy *my_strategy = nullptr;
 		if(strat_name == "SMA_Cross") {
@@ -48,7 +49,7 @@ boost::beast::http::response<boost::beast::http::string_body> BacktestController
 			int slow_period = params_obj.contains("slow_period") ?  params_obj.at("slow_period").as_int64() : 50;
 			my_strategy = new SmaCrossStrategy(fast_period, slow_period);
 		}
-		else if(strat_name == "Bollinger Bands") {
+		else if(strat_name == "Bollinger_Bands") {
 			int window = params_obj.contains("window") ? params_obj.at("window").as_int64() : 20;
 			double dev = params_obj.contains("deviation") ? params_obj.at("deviation").as_double() : 2.0;
 			my_strategy = new BollingerStrategy(window, dev);

@@ -273,6 +273,54 @@ include/Router/Router.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/QuantVector.dir/build.make CMakeFiles/QuantVector.dir/include/Router/Router.cpp.s
 .PHONY : include/Router/Router.cpp.s
 
+src/Listener/Listener.o: src/Listener/Listener.cpp.o
+.PHONY : src/Listener/Listener.o
+
+# target to build an object file
+src/Listener/Listener.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QuantVector.dir/build.make CMakeFiles/QuantVector.dir/src/Listener/Listener.cpp.o
+.PHONY : src/Listener/Listener.cpp.o
+
+src/Listener/Listener.i: src/Listener/Listener.cpp.i
+.PHONY : src/Listener/Listener.i
+
+# target to preprocess a source file
+src/Listener/Listener.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QuantVector.dir/build.make CMakeFiles/QuantVector.dir/src/Listener/Listener.cpp.i
+.PHONY : src/Listener/Listener.cpp.i
+
+src/Listener/Listener.s: src/Listener/Listener.cpp.s
+.PHONY : src/Listener/Listener.s
+
+# target to generate assembly for a file
+src/Listener/Listener.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QuantVector.dir/build.make CMakeFiles/QuantVector.dir/src/Listener/Listener.cpp.s
+.PHONY : src/Listener/Listener.cpp.s
+
+src/Session/Session.o: src/Session/Session.cpp.o
+.PHONY : src/Session/Session.o
+
+# target to build an object file
+src/Session/Session.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QuantVector.dir/build.make CMakeFiles/QuantVector.dir/src/Session/Session.cpp.o
+.PHONY : src/Session/Session.cpp.o
+
+src/Session/Session.i: src/Session/Session.cpp.i
+.PHONY : src/Session/Session.i
+
+# target to preprocess a source file
+src/Session/Session.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QuantVector.dir/build.make CMakeFiles/QuantVector.dir/src/Session/Session.cpp.i
+.PHONY : src/Session/Session.cpp.i
+
+src/Session/Session.s: src/Session/Session.cpp.s
+.PHONY : src/Session/Session.s
+
+# target to generate assembly for a file
+src/Session/Session.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QuantVector.dir/build.make CMakeFiles/QuantVector.dir/src/Session/Session.cpp.s
+.PHONY : src/Session/Session.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -324,6 +372,12 @@ help:
 	@echo "... include/Router/Router.o"
 	@echo "... include/Router/Router.i"
 	@echo "... include/Router/Router.s"
+	@echo "... src/Listener/Listener.o"
+	@echo "... src/Listener/Listener.i"
+	@echo "... src/Listener/Listener.s"
+	@echo "... src/Session/Session.o"
+	@echo "... src/Session/Session.i"
+	@echo "... src/Session/Session.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
