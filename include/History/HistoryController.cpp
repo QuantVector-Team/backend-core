@@ -10,6 +10,7 @@ boost::beast::http::response<boost::beast::http::string_body> HistoryController:
 
 	boost::beast::http::response<boost::beast::http::string_body> res{boost::beast::http::status::ok, req.version()};
 	res.set(boost::beast::http::field::content_type, "application/json");
+	res.set(boost::beast::http::field::access_control_allow_origin, "*");
 	boost::json::object res_obj;
 	try {
 		boost::json::value parsed = boost::json::parse(req.body());
@@ -52,6 +53,7 @@ boost::beast::http::response<boost::beast::http::string_body> HistoryController:
 		err_obj["status"] = "error";
 		err_obj["message"] = "Parsing history error.";
 		res.body() = boost::json::serialize(err_obj);
+		res.set(boost::beast::http::field::access_control_allow_origin, "*");
 	}
 	res.prepare_payload();
 	return res;

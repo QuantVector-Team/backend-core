@@ -12,6 +12,7 @@ std::string generateFakeToken(const std::string &email) {
 boost::beast::http::response<boost::beast::http::string_body> AuthController::registerUser(const boost::beast::http::request<boost::beast::http::string_body> &req) {
 	boost::beast::http::response<boost::beast::http::string_body> res{boost::beast::http::status::ok, req.version()};
 	res.set(boost::beast::http::field::content_type, "application/json");
+	res.set(boost::beast::http::field::access_control_allow_origin, "*");
 	boost::json::object response_obj;
 	try {
 		boost::json::value parsed = boost::json::parse(req.body());
@@ -54,6 +55,7 @@ boost::beast::http::response<boost::beast::http::string_body> AuthController::re
 	catch (const std::runtime_error &e) {
 		std::cerr << "Runtime error: " << e.what() << std::endl;
 		res.result(boost::beast::http::status::bad_request);
+		res.set(boost::beast::http::field::access_control_allow_origin, "*");
 		response_obj["status"] = "error";
 		response_obj["message"] = "Unknow platform";
 		response_obj["error"] = "Runtime Error: " +std::string(e.what());
@@ -62,6 +64,7 @@ boost::beast::http::response<boost::beast::http::string_body> AuthController::re
 	catch (const std::exception &e) {
 		std::cerr << "Exception: "  << e.what() << std::endl;
 		res.result(boost::beast::http::status::bad_request);
+		res.set(boost::beast::http::field::access_control_allow_origin, "*");
 		response_obj["status"] = "error";
 		response_obj["message"] = "The user with this email already exist";
 		response_obj["error"] = "Exception: " + std::string(e.what());
@@ -74,6 +77,7 @@ boost::beast::http::response<boost::beast::http::string_body> AuthController::re
 boost::beast::http::response<boost::beast::http::string_body> AuthController::loginUser(const boost::beast::http::request<boost::beast::http::string_body> &req) {
 	boost::beast::http::response<boost::beast::http::string_body> res{boost::beast::http::status::ok, req.version()};
 	res.set(boost::beast::http::field::content_type, "application/json");
+	res.set(boost::beast::http::field::access_control_allow_origin, "*");
 	boost::json::object response_obj;
 	try {
 		boost::json::value parsed = boost::json::parse(req.body());
@@ -123,6 +127,7 @@ boost::beast::http::response<boost::beast::http::string_body> AuthController::lo
 	}
 	catch (const std::exception &e) {
 		res.result(boost::beast::http::status::bad_request);
+		res.set(boost::beast::http::field::access_control_allow_origin, "*");
 		response_obj["status"] = "error";
 		response_obj["message"] = "Error login: invalid email or password";
 	};

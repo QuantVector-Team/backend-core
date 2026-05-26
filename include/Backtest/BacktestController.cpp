@@ -9,6 +9,7 @@
 boost::beast::http::response<boost::beast::http::string_body> BacktestController::runTest(const boost::beast::http::request<boost::beast::http::string_body> &req) {
 	boost::beast::http::response<boost::beast::http::string_body> res{boost::beast::http::status::ok, req.version()};
 	res.set(boost::beast::http::field::content_type, "application/json"); 
+	res.set(boost::beast::http::field::access_control_allow_origin, "*");
 	
 	try {
 		boost::json::value parsed = boost::json::parse(req.body());
@@ -31,7 +32,7 @@ boost::beast::http::response<boost::beast::http::string_body> BacktestController
 		boost::json::object &sett_obj = settings.as_object();
 		std::string symbol = sett_obj.at("symbol").as_string().c_str();
 		std::string timeframe = sett_obj.at("timeframe").as_string().c_str();
-		double start_balance = sett_obj.at("start_balance").as_double();
+		double start_balance = boost::json::value_to<double>(sett_obj.at("start_balance"));
 		double fee_percent = sett_obj.at("fee_percent").as_double();
 
 		boost::json::value strat = body.at("strategy");
@@ -51,7 +52,7 @@ boost::beast::http::response<boost::beast::http::string_body> BacktestController
 		}
 		else if(strat_name == "Bollinger_Bands") {
 			int window = params_obj.contains("window") ? params_obj.at("window").as_int64() : 20;
-			double dev = params_obj.contains("deviation") ? params_obj.at("deviation").as_double() : 2.0;
+			double dev = boost::json::value_to<double>(params_obj.at("deviation"));
 			my_strategy = new BollingerStrategy(window, dev);
 		}
 		else if(strat_name == "RSI_Oscillator") {
@@ -123,6 +124,7 @@ boost::beast::http::response<boost::beast::http::string_body> BacktestController
 		err_obj["status"] = "error";
 		err_obj["message"] = "invalid format JSON or absent field (coin, timeframe, strategy)";
 		res.body() = boost::json::serialize(err_obj);
+		res.set(boost::beast::http::field::access_control_allow_origin, "*");
 	}
 	res.prepare_payload();
 	return res;
